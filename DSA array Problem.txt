@@ -1,0 +1,53 @@
+//2025(S)-CS-57
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+cout << "Problem 2\n";
+    int matrix[4][5];
+    int x = 1;
+    int y = 12;
+    int z = 20;
+    int count = 14;
+    for(int row = 0; row < 4; row++)
+    {
+        for(int col = 0; col < 5; col++)
+        {
+            if(row == 0){
+                matrix[row][col] = x;
+                x++;
+            }
+   
+
+            if(row == 1){
+                matrix[row][col] = count;
+                count++;
+                if(col == 4) matrix[row][col] = 6;
+            }
+        
+ 
+            if(row == 2){
+                if(col == 0) matrix[row][col] = 13;
+                if(col == 4)  matrix[row][col] = 7;
+                if(!(col == 0 || col == 4)){
+                    
+                    matrix[row][col] = z;
+                    z--;
+                }
+            }
+        
+            if(row == 3){
+                matrix[row][col] = y;
+                y--;
+            }
+        }
+    }
+    for(int x = 0; x < 4; x++){
+        for(int y = 0; y < 5; y++){
+            cout<< matrix[x][y] << "\t";
+        }
+        cout << endl;
+    }
+}
